@@ -1,0 +1,14 @@
+// .charecterCard {
+//   display: flex;
+// }
+
+.charecterCard {
+  width: 90%;
+  margin: 0 auto;
+  .cards {
+    // width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,19 @@
+@import "../index.scss";
+
+.card-list {
+  width: 300px;
+  height: auto;
+  border: 1px solid black;
+  // padding: 1rem;
+  margin: 1rem;
+  border-radius: 2px;
+
+  a {
+    list-style-type: none;
+    text-decoration: none;
+    color: $color2;
+    img {
+      width: 100%;
+    }
+  }
+}
