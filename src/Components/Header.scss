@@ -1,0 +1,33 @@
+// @import url("../index.scss");
+@import "../index.scss";
+
+.header {
+  background-color: $color4;
+  .container {
+    .svg {
+      svg {
+        // fill: rgb(51, 51, 51);
+        fill: $color1;
+        cursor: pointer;
+      }
+    }
+    width: 90%;
+    height: 4rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      li {
+        list-style-type: none;
+        padding: 1rem;
+        a {
+          text-decoration: none;
+          @include mid-font;
+          color: $color1;
+        }
+      }
+    }
+  }
+}

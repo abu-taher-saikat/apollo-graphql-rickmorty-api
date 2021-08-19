@@ -1,0 +1,14 @@
+@import "../index.scss";
+
+.footer {
+  @include mid-font;
+  background-color: $color1;
+  color: $color4;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 4rem;
+}
