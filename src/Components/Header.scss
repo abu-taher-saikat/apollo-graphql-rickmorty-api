@@ -24,8 +24,10 @@
         padding: 1rem;
         a {
           text-decoration: none;
-          @include mid-font;
+          // @include mid-font;
+          font-size: 1rem;
           color: $color1;
+          font-family: $mainFont;
         }
       }
     }

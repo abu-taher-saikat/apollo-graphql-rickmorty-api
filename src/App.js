@@ -4,6 +4,7 @@ import {ApolloClient , InMemoryCache , ApolloProvider, HttpLink} from '@apollo/c
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import HomeScreen from './Screens/HomeScreen';
+import SingleCharacter from './Screens/SingleCharacter';
 
 function App() {
   const client = new ApolloClient({
@@ -17,6 +18,7 @@ function App() {
         <Header />
           <Switch>
             <Route exact path='/' component={HomeScreen}></Route>
+            <Route exact path='/character/:id' component={SingleCharacter}></Route>
           </Switch>
           <Footer />
       </Router>

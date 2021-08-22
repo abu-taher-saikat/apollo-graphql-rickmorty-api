@@ -25,6 +25,5 @@ export const GET_ALL_CHARACTERS= gql`
               }
         }
     }
-            
-    
+          
 `

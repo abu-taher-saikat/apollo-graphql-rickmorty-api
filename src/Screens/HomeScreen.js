@@ -51,7 +51,7 @@ const HomeScreen = () => {
                 <h1>No data Available</h1>
             )}
             <div className="pagination">
-                <Pagination onChange={handlePaginationChange} defaultCurrent={1} total={50} /> 
+                <Pagination onChange={handlePaginationChange} defaultCurrent={1} total={80} /> 
             </div>
             <BackTop />
         </div>

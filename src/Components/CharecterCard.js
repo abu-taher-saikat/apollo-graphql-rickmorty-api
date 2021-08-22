@@ -1,15 +1,14 @@
 import React,{useEffect, useState} from 'react'
 import './CharecterCard.scss'
+import { Link } from 'react-router-dom';
 
-const CharecterCard = ({charecter}) => {
-    console.log(charecter);
+const CharecterCard = ({charecter, match}) => {
     return (
         <>
             {charecter.map((char) => {
                 return(
                     <li className="card-list" key={char.id}>
-                        {/* {console.log(charecter)} */}
-                        <a href="" className="card">
+                        <Link to={`/character/${char.id}`} className="card">
                             <img src={char.image} className="cardImage" alt="" />
                             <div className="cardOverlay">
                                 <div className="cardHeader">                   
@@ -22,7 +21,7 @@ const CharecterCard = ({charecter}) => {
                                 </div>
                                 <p className="cardDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
                             </div>
-                        </a>      
+                        </Link>      
                     </li>   
                 )
             })}
