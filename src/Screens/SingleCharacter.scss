@@ -21,6 +21,8 @@
   background-size: cover;
 
   .container {
+    justify-content: center;
+    // background-color: $color1;
     .left {
       img {
         width: 100%;
@@ -82,16 +84,54 @@
   }
 }
 
+.episodeHeading {
+  padding: 1rem;
+  text-align: center;
+  font-size: 3rem;
+  font-family: $mainFont;
+  span {
+    color: $color4;
+  }
+}
+
 .episode {
+  padding: 1rem;
   .episode-container {
-    background-color: green;
-    margin: 1rem 0.4rem;
-    padding: 0.5rem;
+    background-color: $color1;
+    border-radius: 3px;
+    margin: 1rem;
+    padding: 1rem;
+    .name {
+      padding: 0.5rem 0rem;
+      font-family: $mainFont;
+    }
+    .episodes {
+      padding: 0.3rem 0rem;
+      font-family: $secondFont;
+    }
+    .airdate {
+      font-family: $secondFont;
+    }
   }
 }
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
+  .episode {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    .episode-container {
+      width: 300px;
+      .name {
+      }
+      .episodes {
+      }
+      .airdate {
+      }
+    }
+  }
 }
 
 /* large tablet & laptop styles */

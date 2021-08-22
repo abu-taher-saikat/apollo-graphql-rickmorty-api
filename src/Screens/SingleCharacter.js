@@ -56,24 +56,22 @@ const SingleCharacter = ({match}) => {
                     </div>
 
                 </>
-            ) : (
+            ) : (   
                 <>
                     Character Loading...
                 </>
             )}
 
-
-
+            <h1 className="episodeHeading">You will find  <span>{char?.name} </span> Episodes on, </h1>
             <div className="episode">
-                <h1>You will find {char?.name} on Episode</h1>
                 {episode ? (
                     <>
                        {episode.map((epi)=>(
-                            <ul className="episode-container">
-                                <li>{epi.name}</li>
-                                <li>{epi.episode}</li>
-                                <li>{epi.air_date}</li>
-                            </ul>
+                            <div className="episode-container">
+                                <div className="name">{epi.name}</div>
+                                <div className="episodes">{epi.episode}</div>
+                                <div className="airdate">{epi.air_date}</div>
+                            </div>
                         ))} 
                     </>
                 ) : (
@@ -83,6 +81,7 @@ const SingleCharacter = ({match}) => {
                 )}
      
             </div>
+            <BackTop />
         </div>
     )
 }
