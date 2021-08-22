@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import HomeScreen from './Screens/HomeScreen';
 import SingleCharacter from './Screens/SingleCharacter';
+import EpisodeScreen from './Screens/EpisodeScreen';
 
 function App() {
   const client = new ApolloClient({
@@ -19,6 +20,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={HomeScreen}></Route>
             <Route exact path='/character/:id' component={SingleCharacter}></Route>
+            <Route exact path='/episodes' component={EpisodeScreen}></Route>
           </Switch>
           <Footer />
       </Router>

@@ -19,8 +19,8 @@ const Header = () => {
                 </div>
                 <div>
                     <ul>
-                        <li><Link to="/">Character</Link></li>
-                        <li><Link to="/episode">episode</Link></li>
+                        <li><Link to="/">Characters</Link></li>
+                        <li><Link to="/episodes">episodes</Link></li>
                     </ul>
                 </div>
             </div>

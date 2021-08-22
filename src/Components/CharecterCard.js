@@ -11,7 +11,7 @@ const CharecterCard = ({charecter, match}) => {
                         <Link to={`/character/${char.id}`} className="card">
                             <img src={char.image} className="cardImage" alt="" />
                             <div className="cardOverlay">
-                                <div className="cardHeader">                   
+                                <div className="cardHeader">  
                                     <div className="cardHeader-text">
                                         <h3 className="cardTitle">{char.name}</h3>            
                                         <span>{char.gender}</span>

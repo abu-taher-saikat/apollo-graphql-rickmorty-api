@@ -1,0 +1,50 @@
+import React,{useEffect, useState} from 'react'
+import {useLazyQuery} from '@apollo/client'
+import { GET_ALL_EPISODES } from "../GraphQl/EpisodesQuery";
+import './EpisodeScreen.scss';
+import EpisodeCard from '../Components/EpisodeCard';
+
+
+
+const EpisodeScreen = () => {
+    const [episodes, setEpisodes] = useState(null)
+    const [page, setPage] = useState(1);
+    const [getEpisodes, {loading , error, data}] = useLazyQuery(GET_ALL_EPISODES, {
+        variables : {page : 1}
+    })
+
+    useEffect(()=>{
+        if(data){
+            setEpisodes(data?.episodes.results)
+            console.log(episodes)
+        }else{
+            getEpisodes()
+        }
+    },[episodes , data]);
+
+    if(error) return <h1>Error Found</h1>
+
+    return (
+        <div className="episodes">
+            <h1>Episodes</h1>
+            {/* {data ? console.log(data) : "loading"} */}
+
+            {episodes ? (
+                <>
+                {/* {console.log(episodes)} */}
+                    <div className="episodeList">
+                        <ul className="episodeCards">
+                            <EpisodeCard episodes={episodes} />
+                        </ul>
+                    </div>
+                </>
+            ) : (
+                <>
+                    <h1>Loading Episodes...</h1>
+                </>
+            )}
+        </div>
+    )
+}
+
+export default EpisodeScreen
