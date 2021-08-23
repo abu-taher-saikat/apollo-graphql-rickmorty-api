@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import {useLazyQuery} from '@apollo/client'
 import { GET_ALL_EPISODES } from "../GraphQl/EpisodesQuery";
+import {Pagination} from 'antd';
 import './EpisodeScreen.scss';
 import EpisodeCard from '../Components/EpisodeCard';
 
@@ -10,7 +11,7 @@ const EpisodeScreen = () => {
     const [episodes, setEpisodes] = useState(null)
     const [page, setPage] = useState(1);
     const [getEpisodes, {loading , error, data}] = useLazyQuery(GET_ALL_EPISODES, {
-        variables : {page : 1}
+        variables : {page : page}
     })
 
     useEffect(()=>{
@@ -20,7 +21,12 @@ const EpisodeScreen = () => {
         }else{
             getEpisodes()
         }
-    },[episodes , data]);
+    },[episodes , data, page]);
+
+    const handlePaginationChange = (e) => {
+        console.log(e);
+        setPage(e)
+    }
 
     if(error) return <h1>Error Found</h1>
 
@@ -37,12 +43,17 @@ const EpisodeScreen = () => {
                             <EpisodeCard episodes={episodes} />
                         </ul>
                     </div>
+                    <div className="pagination">
+                        <Pagination onChange={handlePaginationChange} defaultCurrent={1} total={episodes.length} /> 
+                    </div>
                 </>
             ) : (
                 <>
                     <h1>Loading Episodes...</h1>
                 </>
             )}
+
+            
         </div>
     )
 }
