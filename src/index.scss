@@ -145,3 +145,12 @@ $secondFont: "Montaga", serif;
   font-size: 1.5rem;
   // color: $color1 !important;
 }
+
+@mixin pageHeading {
+  font-size: 5rem;
+  font-family: $secondFont;
+  color: $color3;
+  text-align: center;
+  padding: 5rem;
+  font-weight: bold;
+}

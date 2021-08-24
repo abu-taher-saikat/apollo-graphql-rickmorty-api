@@ -2,7 +2,15 @@
 //   display: flex;
 // }
 
+@import "../index.scss";
+
 .charecterCard {
+  .charactersHeading {
+    padding: 2rem;
+    font-size: 3rem;
+    color: $color4;
+    font-family: $mainFont;
+  }
   width: 90%;
   margin: 0 auto;
   .pagination {
@@ -15,5 +23,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media screen and(min-width : 620px) {
+  .characterCard {
+    .charactersHeading {
+      font-size: 5rem;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and(min-width : 960px) {
+  .charactersHeading {
+    font-size: 5rem;
+    text-align: center;
   }
 }

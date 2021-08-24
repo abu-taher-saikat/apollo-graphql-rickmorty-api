@@ -1,6 +1,7 @@
 import './App.scss';
 import { BrowserRouter as Router, Route , Switch} from 'react-router-dom';
 import {ApolloClient , InMemoryCache , ApolloProvider, HttpLink} from '@apollo/client';
+import AnimatedCursor from "react-animated-cursor"
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import HomeScreen from './Screens/HomeScreen';
@@ -15,6 +16,14 @@ function App() {
   })
   return (
     <ApolloProvider client={client}>
+      <AnimatedCursor
+        innerSize={12}
+        outerSize={16}
+        color='193, 11, 111'
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={5}
+    />
       <Router>
         <Header />
           <Switch>

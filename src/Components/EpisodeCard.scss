@@ -30,6 +30,7 @@
       padding: 1rem;
       .name {
         @include basicFont();
+        color: white !important;
       }
       .episode {
         padding: 0rem;
@@ -38,9 +39,14 @@
         color: $color2;
       }
       .air {
-        @include basicFont();
+        // @include basicFont();
         font-family: $secondFont;
         color: $color4;
+      }
+
+      .countChars {
+        font-family: $secondFont;
+        color: $color2;
       }
     }
 
@@ -119,7 +125,8 @@
   .episodeCards {
     margin-bottom: 1rem;
     .card-list {
-      width: 90%;
+      //   width: 90%;
+      width: 60%;
       margin: 0 auto;
       height: auto;
       position: relative;
@@ -138,6 +145,7 @@
         .name {
           @include basicFont();
           font-size: 2.5rem;
+          color: $color4;
         }
         .episode {
           padding: 0.4rem;

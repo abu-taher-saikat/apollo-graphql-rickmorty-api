@@ -1,10 +1,34 @@
+@import "../index.scss";
+
 .episodes {
   margin: 0 auto;
+  .episodeHeading {
+    @include pageHeading();
+    font-size: 3rem;
+  }
   .episodeList {
     margin: 0 auto;
   }
-
   .pagination {
+    width: 20%;
     margin: 0 auto;
+    padding: 2rem;
+    // background-color: black;
+  }
+}
+
+@media screen and(min-width : 620px) {
+  .episodeHeading {
+    // @include pageHeading();
+    font-size: 5rem;
+    // text-align: center;
+  }
+}
+
+@media screen and(min-width : 960px) {
+  .episodeHeading {
+    // @include pageHeading();
+    font-size: 5rem;
+    // text-align: center;
   }
 }

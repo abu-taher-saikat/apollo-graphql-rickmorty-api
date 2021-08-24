@@ -1,10 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import { useLazyQuery } from '@apollo/client'
 import {GET_SINGLE_CHARACTER} from '../GraphQl/SingleQuery';
-import { Spin , Pagination , BackTop } from 'antd';
+import { BackTop } from 'antd';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 import { LoadingOutlined } from '@ant-design/icons';
 import './SingleCharacter.scss'
-const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+// const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 
 
@@ -19,6 +21,8 @@ const SingleCharacter = ({match}) => {
     })
 
     useEffect(()=>{
+        AOS.init();
+        AOS.refresh();
         if(data){
             setCharacter(data)
             
@@ -67,7 +71,10 @@ const SingleCharacter = ({match}) => {
                 {episode ? (
                     <>
                        {episode.map((epi)=>(
-                            <div className="episode-container">
+                            <div
+                            data-aos="zoom-in-right"
+                            data-aos-duration="2000"
+                                className="episode-container">
                                 <div className="name">{epi.name}</div>
                                 <div className="episodes">{epi.episode}</div>
                                 <div className="airdate">{epi.air_date}</div>

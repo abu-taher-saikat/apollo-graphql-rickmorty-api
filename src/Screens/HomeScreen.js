@@ -21,7 +21,7 @@ const HomeScreen = () => {
         }else{
             getCharecters();
         }
-    }, [data , charecter , page])
+    }, [data , charecter , page, getCharecters])
     
   
     if(error) return <h1>Error Found</h1>
@@ -40,19 +40,20 @@ const HomeScreen = () => {
 
     return (
         <div className="charecterCard">
+            <h1 className="charactersHeading">Characters</h1>
             {loading ? <Spin indicator={antIcon} /> : ""}
             {charecter ? (
                 <>
                     <ul className="cards">
                         <CharecterCard charecter={charecter} />   
                     </ul>
+                    <div className="pagination">
+                        <Pagination onChange={handlePaginationChange} defaultCurrent={1} total={charecter.length} /> 
+                    </div>
                 </>
             ) : (
                 <h1>No data Available</h1>
             )}
-            <div className="pagination">
-                <Pagination onChange={handlePaginationChange} defaultCurrent={1} total={80} /> 
-            </div>
             <BackTop />
         </div>
     )

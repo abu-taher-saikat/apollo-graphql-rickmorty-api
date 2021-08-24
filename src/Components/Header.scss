@@ -33,3 +33,30 @@
     }
   }
 }
+
+@media screen and(min-width : 620px) {
+  .header {
+    .container {
+      ul {
+        li {
+          list-style-type: none;
+          padding: 1rem;
+          a {
+            text-decoration: none;
+            // @include mid-font;
+            font-size: 2rem;
+            color: $color1;
+            font-family: $mainFont;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width : 960px) {
+  .charactersHeading {
+    font-size: 5rem;
+    text-align: center;
+  }
+}

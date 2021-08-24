@@ -32,7 +32,7 @@ const EpisodeScreen = () => {
 
     return (
         <div className="episodes">
-            <h1>Episodes</h1>
+            <h1 className="episodeHeading">Episodes</h1>
             {/* {data ? console.log(data) : "loading"} */}
 
             {episodes ? (

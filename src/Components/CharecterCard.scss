@@ -1,10 +1,12 @@
 @import "../index.scss";
 
 .card-list {
-  width: 300px;
-  height: auto;
-  border: 1px solid black;
+  // max-width: 300px;
+  // position: relative;
+  // height: 420px;
+  // border: 1px solid black;
   // padding: 1rem;
+  background-color: $color4;
   margin: 1rem;
   border-radius: 2px;
 
@@ -12,8 +14,28 @@
     list-style-type: none;
     text-decoration: none;
     color: $color2;
-    img {
-      width: 100%;
+    .imageBox {
+      // width: 100%;
+      position: relative;
+      width: 260px;
+      height: 260px;
+      img {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    .cardOverlay {
+      .cardTitle {
+        text-align: center;
+        padding: 1rem;
+        font-family: $mainFont;
+        color: $color1;
+        font-size: 1.3rem;
+      }
     }
   }
+}
+
+@media screen {
 }
