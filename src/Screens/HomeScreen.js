@@ -31,7 +31,6 @@ const HomeScreen = () => {
 
 
     const handlePaginationChange = (e) => {
-        console.log(e);
         setPage(e)
     }
 

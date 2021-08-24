@@ -4,7 +4,7 @@ import {GET_SINGLE_CHARACTER} from '../GraphQl/SingleQuery';
 import { BackTop } from 'antd';
 import AOS from 'aos';
 import "aos/dist/aos.css";
-import { LoadingOutlined } from '@ant-design/icons';
+// import { LoadingOutlined } from '@ant-design/icons';
 import './SingleCharacter.scss'
 // const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
@@ -16,7 +16,7 @@ const SingleCharacter = ({match}) => {
     const char = character?.character;
     const episode = char?.episode;
     const id  = match.params.id;
-    const [getCaracter , {loading , error, data}] = useLazyQuery(GET_SINGLE_CHARACTER, {
+    const [getCaracter , {error, data}] = useLazyQuery(GET_SINGLE_CHARACTER, {
         variables : {id : id}
     })
 
@@ -25,12 +25,10 @@ const SingleCharacter = ({match}) => {
         AOS.refresh();
         if(data){
             setCharacter(data)
-            
-            console.log(episode)
         }else{
             getCaracter()
         }
-    },[data])
+    },[data, episode, getCaracter])
 
     if(error) return <h1>Error Found</h1>
 

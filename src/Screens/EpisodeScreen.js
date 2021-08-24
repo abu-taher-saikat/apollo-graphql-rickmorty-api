@@ -10,21 +10,20 @@ import EpisodeCard from '../Components/EpisodeCard';
 const EpisodeScreen = () => {
     const [episodes, setEpisodes] = useState(null)
     const [page, setPage] = useState(1);
-    const [getEpisodes, {loading , error, data}] = useLazyQuery(GET_ALL_EPISODES, {
+    const [getEpisodes, { error, data}] = useLazyQuery(GET_ALL_EPISODES, {
         variables : {page : page}
     })
 
     useEffect(()=>{
         if(data){
             setEpisodes(data?.episodes.results)
-            console.log(episodes)
+            // console.log(episodes)
         }else{
             getEpisodes()
         }
-    },[episodes , data, page]);
+    },[episodes , data, page , getEpisodes]);
 
     const handlePaginationChange = (e) => {
-        console.log(e);
         setPage(e)
     }
 
