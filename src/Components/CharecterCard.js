@@ -19,7 +19,7 @@ const CharecterCard = ({charecter, match}) => {
                     <Tilt>
                         <li 
                             data-aos="zoom-in-right" 
-                            data-aos-duration="2000" className="card-list" key={char.id}>
+                            data-aos-duration="1200" className="card-list" key={char.id}>
                                 <Link to={`/character/${char.id}`} className="card">
                                     <div className="imageBox">
                                         <img src={char.image} className="cardImage" alt="" />

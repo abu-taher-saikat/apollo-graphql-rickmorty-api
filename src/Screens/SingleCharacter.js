@@ -76,7 +76,7 @@ const SingleCharacter = ({match}) => {
                             data-aos-duration="2000"
                                 className="episode-container">
                                 <div className="name">{epi.name}</div>
-                                <div className="episodes">{epi.episode}</div>
+                                <div className="Allepisodes">{epi.episode}</div>
                                 <div className="airdate">{epi.air_date}</div>
                             </div>
                         ))} 
