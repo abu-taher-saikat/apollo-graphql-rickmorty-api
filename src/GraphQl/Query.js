@@ -9,20 +9,20 @@ export const GET_ALL_CHARACTERS= gql`
                 next
                 prev
               }
-              results {
-                name
+            results {
+              name
+              id
+              image
+              status
+              species
+              type
+              gender
+              origin{
                 id
-                image
-                status
-                species
+                name
                 type
-                gender
-                origin{
-                  id
-                  name
-                  type
-                }
               }
+            }
         }
     }
           

@@ -9,6 +9,7 @@ import EpisodeCard from '../Components/EpisodeCard';
 
 const EpisodeScreen = () => {
     const [episodes, setEpisodes] = useState(null)
+    const [episodeCount, setEpisodeCount] = useState(null)
     const [page, setPage] = useState(1);
     const [getEpisodes, { error, data}] = useLazyQuery(GET_ALL_EPISODES, {
         variables : {page : page}
@@ -17,6 +18,7 @@ const EpisodeScreen = () => {
     useEffect(()=>{
         if(data){
             setEpisodes(data?.episodes.results)
+            setEpisodeCount(data?.episodes.info.count)
             // console.log(episodes)
         }else{
             getEpisodes()
@@ -43,7 +45,7 @@ const EpisodeScreen = () => {
                         </ul>
                     </div>
                     <div className="pagination">
-                        <Pagination onChange={handlePaginationChange} defaultCurrent={1} total={episodes.length} /> 
+                        <Pagination showSizeChanger={false} onChange={handlePaginationChange}  total={episodeCount} /> 
                     </div>
                 </>
             ) : (

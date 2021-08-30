@@ -7,19 +7,25 @@
   background-size: cover;
 
   margin: 0 auto;
+
   .episodeHeading {
     @include pageHeading();
     font-size: 3rem;
     color: black;
   }
+
   .episodeList {
     margin: 0 auto;
   }
+
   .pagination {
-    width: 20%;
-    margin: 0 auto;
-    padding: 2rem;
+    // width: 20%;
+    // margin: 0 auto;
+    // padding: 2rem;
     // background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
   }
 }
 

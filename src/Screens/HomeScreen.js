@@ -10,6 +10,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 const HomeScreen = () => {
     const [charecter, setCharecter] = useState(null)
+    const [characterCount, setCharacterCount] = useState(null)
     const [page, setPage] = useState(1);
     const [getCharecters, {loading, error , data}] = useLazyQuery(GET_ALL_CHARACTERS, {
         variables : { page : page}
@@ -18,6 +19,8 @@ const HomeScreen = () => {
     useEffect(() => {
         if(data){
             setCharecter(data?.characters.results)
+            setCharacterCount(data?.characters.info.count)
+            console.log(charecter)
         }else{
             getCharecters();
         }
@@ -48,7 +51,7 @@ const HomeScreen = () => {
                             <CharecterCard charecter={charecter} />   
                         </ul>
                         <div className="pagination">
-                            <Pagination onChange={handlePaginationChange} defaultCurrent={1} total={charecter.length} /> 
+                            <Pagination showSizeChanger={false} onChange={handlePaginationChange}  total={characterCount} /> 
                         </div>
                     </>
                 ) : (
